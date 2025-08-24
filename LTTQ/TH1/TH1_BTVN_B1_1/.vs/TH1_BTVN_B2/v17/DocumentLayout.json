@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\OneDrive\\Desktop\\VsStudio\\TH1\\TH1\\TH1_BTVN_B2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F5BEB9C-D244-4956-AF7A-AC1CFE5146E9}|TH1_BTVN_B2\\TH1_BTVN_B2.csproj|e:\\onedrive\\desktop\\vsstudio\\th1\\th1\\th1_btvn_b2\\th1_btvn_b2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F5BEB9C-D244-4956-AF7A-AC1CFE5146E9}|TH1_BTVN_B2\\TH1_BTVN_B2.csproj|solutionrelative:th1_btvn_b2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F5BEB9C-D244-4956-AF7A-AC1CFE5146E9}|TH1_BTVN_B2\\TH1_BTVN_B2.csproj|e:\\onedrive\\desktop\\vsstudio\\th1\\th1\\th1_btvn_b2\\th1_btvn_b2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F5BEB9C-D244-4956-AF7A-AC1CFE5146E9}|TH1_BTVN_B2\\TH1_BTVN_B2.csproj|solutionrelative:th1_btvn_b2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\VsStudio\\TH1\\TH1\\TH1_BTVN_B2\\TH1_BTVN_B2\\Form1.cs",
+              "RelativeDocumentMoniker": "TH1_BTVN_B2\\Form1.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\VsStudio\\TH1\\TH1\\TH1_BTVN_B2\\TH1_BTVN_B2\\Form1.cs",
+              "RelativeToolTip": "TH1_BTVN_B2\\Form1.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAD4vyoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T14:49:33.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\VsStudio\\TH1\\TH1\\TH1_BTVN_B2\\TH1_BTVN_B2\\Form1.cs",
+              "RelativeDocumentMoniker": "TH1_BTVN_B2\\Form1.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\VsStudio\\TH1\\TH1\\TH1_BTVN_B2\\TH1_BTVN_B2\\Form1.cs [Design]",
+              "RelativeToolTip": "TH1_BTVN_B2\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T14:30:35.341Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

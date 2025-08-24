@@ -1,0 +1,14 @@
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\bin\Debug\net8.0\TH1_BTVN_B1.exe
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\bin\Debug\net8.0\TH1_BTVN_B1.deps.json
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\bin\Debug\net8.0\TH1_BTVN_B1.runtimeconfig.json
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\bin\Debug\net8.0\TH1_BTVN_B1.dll
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\bin\Debug\net8.0\TH1_BTVN_B1.pdb
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.AssemblyInfoInputs.cache
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.AssemblyInfo.cs
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.csproj.CoreCompileInputs.cache
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.dll
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\refint\TH1_BTVN_B1.dll
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.pdb
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\TH1_BTVN_B1.genruntimeconfig.cache
+E:\OneDrive\Desktop\VsStudio\TH1\TH1\TH1_BTVN_B1\obj\Debug\net8.0\ref\TH1_BTVN_B1.dll
