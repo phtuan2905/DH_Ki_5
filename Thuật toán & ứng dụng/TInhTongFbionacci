@@ -1,0 +1,11 @@
+def Fibo(n):
+    if n==0: return 1,0
+    x,y=Fibo(n//2)
+    x,y=x*x+y*y,x*y+y*(x-y)
+    if n%2==0: return x,y
+    return x+y,x
+
+if __name__ == '__main__':
+    n=int(input())
+    a,b=Fibo(n)
+    print(a, b) 

@@ -1,0 +1,10 @@
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\bin\Debug\LTTQ_TrenLop_BT11_tr72.exe.config
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\bin\Debug\LTTQ_TrenLop_BT11_tr72.exe
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\bin\Debug\LTTQ_TrenLop_BT11_tr72.pdb
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.Form1.resources
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.Properties.Resources.resources
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.exe
+C:\Users\Admin\Desktop\DH_Ki_5\LTTQ\TrenLop\LTTQ_TrenLop_BT11_tr72\obj\Debug\LTTQ_TrenLop_BT11_tr72.pdb
