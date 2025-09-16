@@ -114,15 +114,52 @@ create function BT2_B1 (@nam int)
 returns table
 as 
 	return (
-		
+		select *
+		from tNhanVien
+		where @nam = YEAR(NgayBD)
 	);
 
-
+select * from BT2_B1 (1990);
 --2. Tạo hàm với đầu vào là số thâm niên (số năm làm việc) đầu ra là danh sách nhân viên có
 --thâm niên đó
+create function BT2_B2 (@thamnien int) 
+returns table
+as
+	return(
+		select *
+		from tNhanVien
+		where @thamnien = YEAR(GETDATE()) - YEAR(NgayBD)
+	);
+
+select * from BT2_B2(35);
+
 --3. Tạo hàm đầu vào là chức vụ đầu ra là những nhân viên cùng chức vụ đó
+create function BT2_B3 (@chucvu nvarchar(255))
+returns table
+as
+	return (
+		select tNhanVien.*
+		from tNhanVien, tChiTietNhanVien
+		where @chucvu = tChiTietNhanVien.ChucVu
+			and tNhanVien.MaNV = tChiTietNhanVien.MaNV
+	)
+
+select * from BT2_B3('NV');
 --4. Tạo hàm đưa ra thông tin về nhân viên được tăng lương của ngày hôm nay (giả sử 3 năm
 --lên lương 1 lần)
+create function BT2_B4()
+returns table
+as 
+	return (
+		select * 
+		from tNhanVien
+		where YEAR(GETDATE()) - YEAR(NgayBD) = 3
+			and DAY(GETDATE()) = DAY(NgayBD)
+			and MONTH(GETDATE()) = MONTH(NgayBD)
+	)
+
+select * from BT2_B4();
+
 --5. Tạo Hàm xây dựng bảng lương của nhân viên gồm các thông tin sau:
 --- Lương = lương cơ bản * HSLuong + Phụ cấp (Giả sử lương cơ bản=1490000vnd (1.49tr))
 --- BHXH: 8%*lương (bảo hiểm xã hội)
@@ -133,6 +170,102 @@ as
 --trừ gia cảnh)
 --- Phụ cấp: Mức độ công việc là A thì phụ cấp 10tr, mức độ B là 8tr, mức độ C là 5tr
 --- Thực lĩnh: Lương – (BHXH+BHYT+BHTN + Thuế TNCN)
+create function BT2_B5 ()
+returns @Result table 
+(
+    Luong int,
+    BHXH float,
+	BHYT float,
+	BHTN float,
+	ThueTNCN float,
+	PhuCap int,
+	ThucLinh float
+)
+as
+begin
+	declare @pc int, @luong int, @bhxh float, @bhyt float, @bhtn float, @tn float, @theutncn float, @thuclinh float
+	insert into @Result
+	select
+		v2.luong as Luong,
+		v3.bhxh as BHXH,
+		v3.bhyt as BHYT,
+		v3.bhtn as BHTN,
+		v5.thuetncn as ThueTNCN,
+		v1.phucap as PhuCap,
+		(v2.luong - (v3.bhxh + v3.bhyt + v3.bhtn + v5.thuetncn)) as ThucLinh
+	from tChiTietNhanVien
+	cross apply ( values (
+		1490000,
+		case 
+			when MucDoCV like '%A%' then 10000000
+			when MucDoCV like '%B%' then 8000000
+			when MucDoCV like '%C%' then 5000000
+		end
+	)) v1(luongcoban, phucap)
+	cross apply ( values (
+		v1.luongcoban * HSLuong + v1.phucap
+	)) v2(luong)
+	cross apply ( values (
+		v2.luong * 0.08,
+		v2.luong * 0.015,
+		v2.luong * 0.01
+	)) v3(bhxh, bhyt, bhtn)
+	cross apply ( values (
+		v2.luong - v3.bhxh - v3.bhyt - v3.bhtn - 11000000 - GTGC * 4400000
+	)) v4(thunhap)
+	cross apply ( values (
+		case
+			when v4.thunhap <= 5000000 then v4.thunhap * 0.05
+			when v4.thunhap between 5000001 and 10000000 then v4.thunhap * 0.1 - 250000
+			when v4.thunhap between 10000001 and 18000000 then v4.thunhap * 0.15 - 750000
+			when v4.thunhap between 18000001 and 32000000 then v4.thunhap * 0.2 - 1650000
+			when v4.thunhap between 32000001 and 52000000 then v4.thunhap * 0.25 - 3250000
+			when v4.thunhap between 52000001 and 80000000 then v4.thunhap * 0.3 - 5850000
+			when v4.thunhap > 80000000 then v4.thunhap * 0.35 - 9850000
+		end
+	)) v5(thuetncn)
+	return;
+end
+
+select * from BT2_B5();
+
 --6. Tạo thủ tục có đầu vào là mã phòng, đầu ra là số nhân viên của phòng đó và tên trưởng
 --phòng
+create function BT2_B6 (@maphong nvarchar(255))
+returns table
+as return (
+	select tp.TEN as TenTruongPhong, snv.SoNhanVien
+	from
+	(select tNhanVien.MaPB, tNhanVien.TEN
+	from tNhanVien, tPhongBan
+	where @maphong = tPhongBan.MaPB and @maphong = tNhanVien.MaPB and tPhongBan.TruongPhong = tNhanVien.MaNV) tp, 
+	(select tNhanVien.MaPB, COUNT(tNhanVien.MaNV) as SoNhanVien
+	from tNhanVien, tPhongBan
+	where @maphong = tNhanVien.MaPB
+	group by tNhanVien.MaPB) snv
+	where tp.MaPB = snv.MaPB
+)
+
+select * from BT2_B6('KH');
+
 --7. Tạo thủ tục có đầu vào là mã phòng, tháng, năm, đầu ra là số tiền lương của phòng đó
+create function BT2_B7 (@maphong nvarchar(255), @thang int, @nam int)
+returns table
+as return (
+	select SUM(v2.luong) as TongLuong
+	from tNhanVien, tChiTietNhanVien
+	cross apply ( values (
+		1490000,
+		case 
+			when MucDoCV like '%A%' then 10000000
+			when MucDoCV like '%B%' then 8000000
+			when MucDoCV like '%C%' then 5000000
+		end
+	)) v1(luongcoban, phucap)
+	cross apply ( values (
+		v1.luongcoban * HSLuong + v1.phucap
+	)) v2(luong)
+	where tNhanVien.MaPB = @maphong and tNhanVien.MaNV = tChiTietNhanVien.MaNV and MONTH(tNhanVien.NgayBD) < @thang and YEAR(tNhanVien.NgayBD) < @nam 
+)
+
+select * from BT2_B7('KH', 5, 2025);
