@@ -11,6 +11,7 @@ as
 	);
 
 select * from B1('PK');
+drop function B1;
 --2. Thiết lập hàm có đầu vào là số xe, đầu ra là thông tin về lộ trình
 create function B2 (@soxe nvarchar(255))
 returns table
@@ -22,6 +23,7 @@ as
 	);
 
 select * from B2('333');
+drop function B2;
 --3.Tạo hàm có đầu vào là trọng tải, đầu ra là các số xe có trọng tải quy định lớn hơn hoặc bằng
 --trọng tải đó
 create function B3 (@matt nvarchar(255))
@@ -33,6 +35,7 @@ returns table as
 	);
 
 select * from B3('50');
+drop function B3;
 --4. Tạo hàm có đầu vào là trọng tải và mã lộ trình, đầu ra là số lượng xe có trọng tải quy định
 --lớn hơn hoặc bằng trọng tải đó và thuộc lộ trình đó.
 create function B4 (@matt nvarchar(255), @malt nvarchar(255))
@@ -45,6 +48,7 @@ returns table as
 	);
 
 select * from B4('50', 'HN');
+drop function B4;
 --5. Tạo thủ tục có đầu vào Mã lộ trình đầu ra là số lượng xe thuộc lộ trình đó.
 create procedure B5 @malt nvarchar(255), @soluongxe int output
 as 
@@ -57,6 +61,7 @@ as
 declare @slx int;
 exec B5 'HN', @slx output;
 print @slx;
+drop procedure B5;
 --6. Tạo thủ tục có đầu vào là mã lộ trình, năm vận tải, đầu ra là số tiền theo mã lộ trình và năm
 --vận tải đó
 create procedure B6 @malt nvarchar(255), @namvt int, @sotien int output
@@ -73,6 +78,7 @@ as
 declare @st int;
 exec B6 'NT', 2014, @st output;
 print @st;
+drop procedure B6;
 
 --7. Tạo thủ tục có đầu vào là số xe, năm vận tải, đầu ra là số tiền theo số xe và năm vận tải đó
 --đó
@@ -90,6 +96,7 @@ end;
 declare @st int;
 exec B7 '333', 2014, @st output;
 print @st;
+drop procedure B7;
 
 --8. Tạo thủ tục có đầu vào là mã trọng tải, đầu ra là số lượng xe vượt quá trọng tải quy định
 --của mã trọng tải đó.
@@ -106,6 +113,7 @@ end;
 declare @slx int;
 exec B8 '50', @slx output;
 print @slx;
+drop procedure B8;
 
 --BT2
 --1. Tạo hàm với đầu vào là năm, đầu ra là danh sách nhân viên sinh vào năm đó
@@ -120,6 +128,7 @@ as
 	);
 
 select * from BT2_B1 (1990);
+drop function BT2_B1;
 --2. Tạo hàm với đầu vào là số thâm niên (số năm làm việc) đầu ra là danh sách nhân viên có
 --thâm niên đó
 create function BT2_B2 (@thamnien int) 
@@ -132,7 +141,7 @@ as
 	);
 
 select * from BT2_B2(35);
-
+drop function BT2_B2;
 --3. Tạo hàm đầu vào là chức vụ đầu ra là những nhân viên cùng chức vụ đó
 create function BT2_B3 (@chucvu nvarchar(255))
 returns table
@@ -145,6 +154,7 @@ as
 	)
 
 select * from BT2_B3('NV');
+drop function BT2_B3;
 --4. Tạo hàm đưa ra thông tin về nhân viên được tăng lương của ngày hôm nay (giả sử 3 năm
 --lên lương 1 lần)
 create function BT2_B4()
@@ -159,6 +169,7 @@ as
 	)
 
 select * from BT2_B4();
+drop function BT2_B4;
 
 --5. Tạo Hàm xây dựng bảng lương của nhân viên gồm các thông tin sau:
 --- Lương = lương cơ bản * HSLuong + Phụ cấp (Giả sử lương cơ bản=1490000vnd (1.49tr))
@@ -228,6 +239,7 @@ begin
 end
 
 select * from BT2_B5();
+drop function BT2_B5;
 
 --6. Tạo thủ tục có đầu vào là mã phòng, đầu ra là số nhân viên của phòng đó và tên trưởng
 --phòng
@@ -247,6 +259,7 @@ as return (
 )
 
 select * from BT2_B6('KH');
+drop function BT2_B6;
 
 --7. Tạo thủ tục có đầu vào là mã phòng, tháng, năm, đầu ra là số tiền lương của phòng đó
 create function BT2_B7 (@maphong nvarchar(255), @thang int, @nam int)
@@ -269,3 +282,4 @@ as return (
 )
 
 select * from BT2_B7('KH', 5, 2025);
+drop function BT2_B7;
