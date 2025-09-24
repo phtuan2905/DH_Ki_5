@@ -148,10 +148,9 @@ update tKhachHang set TongTieuDung = 0;
 
 create trigger B2_C4 on tDangKy for insert, update, delete as
 begin
-	update tkh
-	set tkh.TongTieuDung = tkh.TongTieuDung - tTru.TongTru
-	from tKhachHang tkh
-	join
+	update tKhachHang
+	set tKhachHang.TongTieuDung = tKhachHang.TongTieuDung - tTru.TongTru
+	from 
 	(
 		select tChiTietKH.LoaiKH , SUM(tdt.ThucThu) as TongTru
 		from deleted del
@@ -161,7 +160,7 @@ begin
 		on del.MaDK = tdt.MaDK
 		group by tChiTietKH.LoaiKH 
 	) as tTru
-	on tkh.LoaiKH = tTru.LoaiKH
+	where tKhachHang.LoaiKH = tTru.LoaiKH
 
 	delete from tDoanhThu 
 	where tDoanhThu.MaDK
@@ -181,10 +180,9 @@ begin
 	join tLoaiPhong tlp
 	on ins.LoaiPhong = tlp.LoaiPhong
 
-	update tkh
-	set tkh.TongTieuDung = tkh.TongTieuDung + tCong.TongCong
-	from tKhachHang tkh
-	join
+	update tKhachHang
+	set tKhachHang.TongTieuDung = tKhachHang.TongTieuDung + tCong.TongCong
+	from 
 	(
 		select tChiTietKH.LoaiKH , SUM(tdt.ThucThu) as TongCong
 		from inserted ins
@@ -194,7 +192,7 @@ begin
 		on ins.MaDK = tdt.MaDK
 		group by tChiTietKH.LoaiKH 
 	) as tCong
-	on tkh.LoaiKH = tCong.LoaiKH
+	where tKhachHang.LoaiKH = tCong.LoaiKH
 end;
 
 insert into tChiTietKH(MaDK, LoaiKH, Phai) values('016', '1', 1);
