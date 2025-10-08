@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh web\\ltw_trenlop\\ltw_trenlop_day08\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|solutionrelative:ltw_trenlop_day08\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh web\\ltw_trenlop\\ltw_trenlop_day08\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|solutionrelative:ltw_trenlop_day08\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh web\\ltw_trenlop\\ltw_trenlop_day08\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|solutionrelative:ltw_trenlop_day08\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh web\\ltw_trenlop\\ltw_trenlop_day08\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|solutionrelative:ltw_trenlop_day08\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh web\\ltw_trenlop\\ltw_trenlop_day08\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7BCE0550-CCDA-4F26-9AFF-7E128509840D}|LTW_TrenLop_Day08\\LTW_TrenLop_Day08.csproj|solutionrelative:ltw_trenlop_day08\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Program.cs",
+              "RelativeDocumentMoniker": "LTW_TrenLop_Day08\\Program.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Program.cs",
+              "RelativeToolTip": "LTW_TrenLop_Day08\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:32:09.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "LTW_TrenLop_Day08\\Models\\AppDbContext.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "LTW_TrenLop_Day08\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:18:20.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "LTW_TrenLop_Day08\\Models\\Product.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\Product.cs",
+              "RelativeToolTip": "LTW_TrenLop_Day08\\Models\\Product.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:05:50.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Category.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "LTW_TrenLop_Day08\\Models\\Category.cs",
+              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\Models\\Category.cs",
+              "RelativeToolTip": "LTW_TrenLop_Day08\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T07:00:57.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\appsettings.json",
+              "RelativeDocumentMoniker": "LTW_TrenLop_Day08\\appsettings.json",
+              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh Web\\LTW_TrenLop\\LTW_TrenLop_Day08\\appsettings.json",
+              "RelativeToolTip": "LTW_TrenLop_Day08\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-08T06:56:45.728Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
