@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LTTQ_C6_BT6._5.DanhMuc;
 
 namespace LTTQ_C6_BT6._5
 {
@@ -21,6 +22,24 @@ namespace LTTQ_C6_BT6._5
         {
             FormHangHoa formHangHoa = new FormHangHoa();
             formHangHoa.Show();
+        }
+
+        private void chấtLiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChatLieu form = new FormChatLieu();
+            form.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKhachHang form = new FormKhachHang();
+            form.Show();
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNhanVien form = new FormNhanVien();
+            form.Show();
         }
     }
 }

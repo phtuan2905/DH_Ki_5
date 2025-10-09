@@ -10,7 +10,7 @@ namespace LTTQ_C6_BT6._5.Classes
 {
     internal class DataProcessor
     {
-        string strConnect = "Data Source=;DataBase=;Integrated Security=True";
+        string strConnect = "Server=THENAME\\SQLEXPRESS;DataBase=LTTQ_QLBanHang;Integrated Security=True";
         SqlConnection sqlConnect = null;
 
         public void OpenConnect()

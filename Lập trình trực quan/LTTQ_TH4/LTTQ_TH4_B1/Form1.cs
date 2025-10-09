@@ -102,7 +102,7 @@ namespace LTTQ_TH4_B1
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            label_quanlysanpham.Text = "CẬP NHẬT MẶ HÀNG";
+            label_quanlysanpham.Text = "CẬP NHẬT MẶT HÀNG";
             button_them.Enabled = false;
             button_xoa.Enabled = false;
             HienChiTiet(true);

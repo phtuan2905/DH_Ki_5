@@ -171,7 +171,7 @@ begin
 end;
 
 declare @slsn int, @slsb int;
-exec tt_B9 2014, 'S01', @slsn output, @slsb output;
+exec tt_B9 'S01', 2014, @slsn output, @slsb output;
 print @slsn;
 print @slsb;
 drop procedure tt_B9;
@@ -191,7 +191,7 @@ begin
 end;
 
 declare @slsm int, @sltt float;
-exec tt_B10 'KH01', '2014', @slsm output, @sltt output;
+exec tt_B10 'KH01', 2014, @slsm output, @sltt output;
 print @slsm;
 print @sltt;
 drop procedure tt_B10;
@@ -211,7 +211,7 @@ begin
 end;
 
 declare @slhd int, @sltt float;
-exec tt_B11 'KH01', '2014', @slhd output, @sltt output;
+exec tt_B11 'KH01', 2014, @slhd output, @sltt output;
 print @slhd;
 print @sltt;
 drop procedure tt_B11;
@@ -235,7 +235,9 @@ begin
 	return @tongsotien;
 end;
 
-print h_B1(2014);
+declare @returnVal float;
+set @returnVal = dbo.h_B1(2014);
+print @returnVal;
 drop function h_B1;
 
 --2. Tạo hàm đưa ra danh sách 5 đầu sách bán chạy nhất trong tháng nào đó (tháng là tham số
@@ -244,7 +246,7 @@ create function h_B2(@thang int)
 returns table
 as
 return (
-	select top 5 * 
+	select top 5 tSach.* 
 	from tSach
 	join(
 		select tChiTietHDB.MaSach, SUM(tChiTietHDB.SLBan) as SoLuongSachBan
@@ -253,9 +255,9 @@ return (
 		on tChiTietHDB.SoHDB = tHoaDonBan.SoHDB
 		where MONTH(tHoaDonBan.NgayBan) = @thang
 		group by tChiTietHDB.MaSach
-		order by SoLuongSachBan
 	) as DsBan
 	on tSach.MaSach = DsBan.MaSach
+	order by SoLuongSachBan
 );
 
 select * from h_B2(1);
@@ -267,7 +269,7 @@ create function h_B3(@nam int, @n int)
 returns table
 as
 return(
-	select top (@n) * 
+	select top (@n) tNhanVien.* 
 	from tNhanVien
 	join (
 		select tHoaDonBan.MaNV, SUM(tChiTietHDB.SLBan * tSach.DonGiaBan) as SoTienBan
@@ -278,9 +280,9 @@ return(
 		on tChiTietHDB.MaSach = tSach.MaSach
 		where YEAR(tHoaDonBan.NgayBan) = @nam
 		group by tHoaDonBan.MaNV
-		order by SoTienBan
 	) as DsBan
 	on tNhanVien.MaNV = DsBan.MaNV
+	order by SoTienBan
 );
 
 select * from h_B3(2014, 10);
@@ -293,10 +295,10 @@ as
 return (
 	select * 
 	from tNhanVien
-	where CAST(tNhanVien.NgaySinh) = @ngay
+	where tNhanVien.NgaySinh = @ngay
 );
 
-select * from h_B4('20/01/1992');
+select * from h_B4('1990-09-11 00:00:00.000');
 drop function h_B4;
 
 --5. Tạo hàm đưa ra danh sách tồn trong kho quá 2 năm (nhập nhưng không bán hết trong hai
@@ -309,21 +311,30 @@ return (
 	from tChiTietHDN cthdn
 	join tHoaDonNhap hdn
 	on cthdn.SoHDN = hdn.SoHDN
-	join (
-		select tHoaDonBan.*, tChiTietHDB.SLBan, tChiTietHDB.MaSach
-		from tHoaDonBan
-		join tChiTietHDB
-		on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
-	) as hdb1
-	on cthdn.MaSach = hdb1.MaSach and YEAR(hdb1.NgayBan) = YEAR(hdn.NgayNhap) + 1
-	join (
-		select tHoaDonBan.*, tChiTietHDB.SLBan, tChiTietHDB.MaSach
-		from tHoaDonBan
-		join tChiTietHDB
-		on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
-	) as hdb2
-	on cthdn.MaSach = hdb2.MaSach and YEAR(hdb2.NgayBan) = YEAR(hdn.NgayNhap) + 2
-	where cthdn.SLNhap > SUM(hdb1.SLBan) + SUM(hdb2.SLBan)
+	where cthdn.SLNhap > 
+	(
+		(
+			select SUM(hdb1.SLBan) 
+			from (
+				select tHoaDonBan.NgayBan, tChiTietHDB.SLBan, tChiTietHDB.MaSach
+				from tHoaDonBan
+				join tChiTietHDB
+				on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
+			) as hdb1
+			where cthdn.MaSach = hdb1.MaSach and YEAR(hdb1.NgayBan) = YEAR(hdn.NgayNhap) + 1
+		)
+		+
+		(
+			select SUM(hdb2.SLBan) 
+			from (
+				select tHoaDonBan.NgayBan, tChiTietHDB.SLBan, tChiTietHDB.MaSach
+				from tHoaDonBan
+				join tChiTietHDB
+				on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
+			) as hdb2
+			where cthdn.MaSach = hdb2.MaSach and YEAR(hdb2.NgayBan) = YEAR(hdn.NgayNhap) + 2
+		)
+	)
 );
 
 select * from h_B5();
@@ -335,21 +346,36 @@ create function h_B6(@ngay datetime)
 returns table
 as
 return (
-	select tHoaDonBan.*, (tChiTietHDB.SLBan * tSach.DonGiaBan) 
+	select tHoaDonBan.*, (tChiTietHDB.SLBan * tSach.DonGiaBan) as GiaTri
 	from tHoaDonBan
 	join tChiTietHDB
 	on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
 	join tSach
 	on tChiTietHDB.MaSach = tSach.MaSach
-	where CAST(tHoaDonBan.NgayBan) = CAST(@ngay)
+	where tHoaDonBan.NgayBan = @ngay
 );
 
-select * from h_B6('20/01/2014');
+select * from h_B6('2014-08-11 00:00:00.000');
 drop function h_B6;
 
 --7. Tạo hàm có đầu vào là năm đầu ra là thống kê doanh thu theo từng tháng và cả năm (dùng
 --roll up)
+create function h_B7(@nam int) 
+returns table
+as
+return(
+	select MONTH(tHoaDonBan.NgayBan) as Thang, SUM(tChiTietHDB.SLBan * tSach.DonGiaBan) as DoanhThu
+	from tHoaDonBan
+	join tChiTietHDB
+	on tHoaDonBan.SoHDB = tChiTietHDB.SoHDB
+	join tSach
+	on tSach.MaSach = tChiTietHDB.MaSach
+	where YEAR(tHoaDonBan.NgayBan) = @nam
+	group by rollup(MONTH(tHoaDonBan.NgayBan))
+);
 
+select * from h_B7(2014);
+drop function h_B7;
 
 --8. Tạo hàm có đầu vào là mã sách, đầu ra là số lượng tồn của sách
 create function h_B8(@masach nvarchar(255))
@@ -363,7 +389,9 @@ begin
 	return @soluong;
 end;
 
-print h_B8('S01');
+declare @returnVal1 int;
+set @returnVal1 = dbo.h_B8('S01');
+print @returnVal1;
 drop function h_B8;
 
 --9. Tạo hàm có đầu vào là mã thể loại, đầu ra là thông tin sách, số lượng sách nhập, số lượng
@@ -372,13 +400,19 @@ create function h_B9(@matl nvarchar(255))
 returns table
 as
 return(
-	select tSach.*, SUM(tChiTietHDN.SLNhap) as SoLuongNhap, SUM(tChiTietHDB.SLBan) as SoLuongBan
+	select tSach.*, dssl.SoLuongNhap, dssl.SoLuongBan
 	from tSach
-	join tChiTietHDN
-	on tSach.MaSach = tChiTietHDN.MaSach
-	join tChiTietHDB
-	on tSach.MaSach = tChiTietHDB.MaSach
-	where tSach.MaTheLoai = @matl
+	join (
+		select tSach.MaSach, SUM(tChiTietHDN.SLNhap) as SoLuongNhap, SUM(tChiTietHDB.SLBan) as SoLuongBan
+		from tSach
+		join tChiTietHDN
+		on tSach.MaSach = tChiTietHDN.MaSach
+		join tChiTietHDB
+		on tSach.MaSach = tChiTietHDB.MaSach
+		where tSach.MaTheLoai = @matl
+		group by tSach.MaSach
+	) as dssl
+	on dssl.MaSach = tSach.MaSach
 );
 
 select * from h_B9('TL01');

@@ -6,8 +6,8 @@ namespace LTTQ_TH4_B1.Classes
     class DataBaseProcess
     {
         //Khai báo biến toàn cục, bạn phải thay đổi chuối kết nối phù hợp
-        string strConnect = "Data Source=\\SQLEXPRESS;" +
-                "DataBase=LTTQ_BanHang;Integrated Security=true";
+        string strConnect = "Server=THENAME\\SQLEXPRESS;" +
+                "DataBase=LTTQ_BanHang;Integrated Security=true;Trusted_Connection=True;TrustServerCertificate=True;";
         SqlConnection sqlConnect = null;
         //Phương thức mở kết nối
         void OpenConnect()
@@ -28,12 +28,12 @@ namespace LTTQ_TH4_B1.Classes
         //Phương thức thực thi câu lệnh Select trả về một DataTable
         public DataTable DataReader(string sqlSelct)
         {
-            DataTable tblData = new DataTable();
+            DataTable tableData = new DataTable();
             OpenConnect();
             SqlDataAdapter sqlData = new SqlDataAdapter(sqlSelct, sqlConnect);
-            sqlData.Fill(tblData);
+            sqlData.Fill(tableData);
             CloseConnect();
-            return tblData;
+            return tableData;
         }
         //Phương thức thực hiện câu lệnh dạng insert,update,delete
         public void DataChange(string sql)
