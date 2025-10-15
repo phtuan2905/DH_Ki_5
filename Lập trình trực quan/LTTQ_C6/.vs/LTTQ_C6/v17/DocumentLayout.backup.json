@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\classes\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\classes\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|e:\\onedrive\\desktop\\dh\\dh_ki_5\\l\u1EADp tr\u00ECnh tr\u1EF1c quan\\lttq_c6\\lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{268E96F5-4085-49BE-A52B-9824EACEF98C}|LTTQ_C6_BT6.5\\LTTQ_C6_BT6.5.csproj|solutionrelative:lttq_c6_bt6.5\\danhmuc\\formhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,49 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormMain.cs",
-              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\FormMain.cs",
-              "RelativeDocumentMoniker": "LTTQ_C6_BT6.5\\FormMain.cs",
-              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\FormMain.cs",
-              "RelativeToolTip": "LTTQ_C6_BT6.5\\FormMain.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T09:44:54.659Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormMain.cs [Design]",
-              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\FormMain.cs",
-              "RelativeDocumentMoniker": "LTTQ_C6_BT6.5\\FormMain.cs",
-              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\FormMain.cs [Design]",
-              "RelativeToolTip": "LTTQ_C6_BT6.5\\FormMain.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T09:44:23.848Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Functions.cs",
-              "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\Classes\\Functions.cs",
-              "RelativeDocumentMoniker": "LTTQ_C6_BT6.5\\Classes\\Functions.cs",
-              "ToolTip": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\Classes\\Functions.cs",
-              "RelativeToolTip": "LTTQ_C6_BT6.5\\Classes\\Functions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T09:33:33.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "FormHangHoa.cs",
               "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\DanhMuc\\FormHangHoa.cs",
               "RelativeDocumentMoniker": "LTTQ_C6_BT6.5\\DanhMuc\\FormHangHoa.cs",
@@ -85,7 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "FormHangHoa.cs [Design]",
               "DocumentMoniker": "E:\\OneDrive\\Desktop\\DH\\DH_Ki_5\\L\u1EADp tr\u00ECnh tr\u1EF1c quan\\LTTQ_C6\\LTTQ_C6_BT6.5\\DanhMuc\\FormHangHoa.cs",
               "RelativeDocumentMoniker": "LTTQ_C6_BT6.5\\DanhMuc\\FormHangHoa.cs",

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTTQ_TH4_B1", "LTTQ_TH4_B1\LTTQ_TH4_B1.csproj", "{B9B706E1-A7BB-4F30-8345-E4DD4FCC8E43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTTQ_TH4_B2", "LTTQ_TH4_B2\LTTQ_TH4_B2.csproj", "{268E96F5-4085-49BE-A52B-9824EACEF98C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B9B706E1-A7BB-4F30-8345-E4DD4FCC8E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9B706E1-A7BB-4F30-8345-E4DD4FCC8E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9B706E1-A7BB-4F30-8345-E4DD4FCC8E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268E96F5-4085-49BE-A52B-9824EACEF98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268E96F5-4085-49BE-A52B-9824EACEF98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268E96F5-4085-49BE-A52B-9824EACEF98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268E96F5-4085-49BE-A52B-9824EACEF98C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
