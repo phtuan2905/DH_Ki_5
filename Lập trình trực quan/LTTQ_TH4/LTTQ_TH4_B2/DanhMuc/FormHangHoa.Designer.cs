@@ -47,10 +47,8 @@
             this.button_anh = new System.Windows.Forms.Button();
             this.dataGridView_hanghoa = new System.Windows.Forms.DataGridView();
             this.button_themmoi = new System.Windows.Forms.Button();
-            this.button_luu = new System.Windows.Forms.Button();
             this.button_sua = new System.Windows.Forms.Button();
             this.button_xoa = new System.Windows.Forms.Button();
-            this.button_boqua = new System.Windows.Forms.Button();
             this.button_thoat = new System.Windows.Forms.Button();
             this.label_xinchao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anh)).BeginInit();
@@ -223,23 +221,13 @@
             // 
             // button_themmoi
             // 
-            this.button_themmoi.Location = new System.Drawing.Point(37, 541);
+            this.button_themmoi.Location = new System.Drawing.Point(143, 541);
             this.button_themmoi.Name = "button_themmoi";
             this.button_themmoi.Size = new System.Drawing.Size(95, 35);
             this.button_themmoi.TabIndex = 20;
             this.button_themmoi.Text = "Thêm mới";
             this.button_themmoi.UseVisualStyleBackColor = true;
             this.button_themmoi.Click += new System.EventHandler(this.button_themmoi_Click);
-            // 
-            // button_luu
-            // 
-            this.button_luu.Location = new System.Drawing.Point(166, 541);
-            this.button_luu.Name = "button_luu";
-            this.button_luu.Size = new System.Drawing.Size(95, 35);
-            this.button_luu.TabIndex = 21;
-            this.button_luu.Text = "Lưu";
-            this.button_luu.UseVisualStyleBackColor = true;
-            this.button_luu.Click += new System.EventHandler(this.button_luu_Click);
             // 
             // button_sua
             // 
@@ -261,19 +249,9 @@
             this.button_xoa.UseVisualStyleBackColor = true;
             this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
             // 
-            // button_boqua
-            // 
-            this.button_boqua.Location = new System.Drawing.Point(537, 541);
-            this.button_boqua.Name = "button_boqua";
-            this.button_boqua.Size = new System.Drawing.Size(95, 35);
-            this.button_boqua.TabIndex = 24;
-            this.button_boqua.Text = "Bỏ qua";
-            this.button_boqua.UseVisualStyleBackColor = true;
-            this.button_boqua.Click += new System.EventHandler(this.button_boqua_Click);
-            // 
             // button_thoat
             // 
-            this.button_thoat.Location = new System.Drawing.Point(667, 541);
+            this.button_thoat.Location = new System.Drawing.Point(537, 541);
             this.button_thoat.Name = "button_thoat";
             this.button_thoat.Size = new System.Drawing.Size(95, 35);
             this.button_thoat.TabIndex = 25;
@@ -299,10 +277,8 @@
             this.ClientSize = new System.Drawing.Size(808, 622);
             this.Controls.Add(this.label_xinchao);
             this.Controls.Add(this.button_thoat);
-            this.Controls.Add(this.button_boqua);
             this.Controls.Add(this.button_xoa);
             this.Controls.Add(this.button_sua);
-            this.Controls.Add(this.button_luu);
             this.Controls.Add(this.button_themmoi);
             this.Controls.Add(this.dataGridView_hanghoa);
             this.Controls.Add(this.button_anh);
@@ -353,10 +329,8 @@
         private System.Windows.Forms.Button button_anh;
         private System.Windows.Forms.DataGridView dataGridView_hanghoa;
         private System.Windows.Forms.Button button_themmoi;
-        private System.Windows.Forms.Button button_luu;
         private System.Windows.Forms.Button button_sua;
         private System.Windows.Forms.Button button_xoa;
-        private System.Windows.Forms.Button button_boqua;
         private System.Windows.Forms.Button button_thoat;
         private System.Windows.Forms.Label label_xinchao;
     }

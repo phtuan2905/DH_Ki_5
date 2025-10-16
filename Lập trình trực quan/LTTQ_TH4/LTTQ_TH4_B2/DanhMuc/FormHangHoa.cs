@@ -31,10 +31,10 @@ namespace LTTQ_TH4_B2
 
             dtHangHoa.Dispose();
 
-            button_luu.Enabled = false;
-            button_sua.Enabled = false;
-            button_xoa.Enabled = false;
-            button_boqua.Enabled = false;
+            //button_luu.Enabled = false;
+            //button_sua.Enabled = false;
+            //button_xoa.Enabled = false;
+            //button_boqua.Enabled = false;
 
             label_xinchao.Text = "Xin chào " + GlobalData.username;
         }
@@ -72,178 +72,93 @@ namespace LTTQ_TH4_B2
 
         private void button_themmoi_Click(object sender, EventArgs e)
         {
-            button_sua.Enabled = false;
-            button_xoa.Enabled = false;
-            button_luu.Enabled = true;
-            button_boqua.Enabled = true;
-
-            ResetForm();
-        }
-
-        private void button_boqua_Click(object sender, EventArgs e)
-        {
-            button_themmoi.Enabled = true;
-            button_sua.Enabled = false;
-            button_xoa.Enabled = false;
-            button_luu.Enabled = false;
-            button_boqua.Enabled = false;
+            //button_sua.Enabled = false;
+            //button_xoa.Enabled = false;
+            //button_luu.Enabled = true;
+            //button_boqua.Enabled = true;
 
             textBox_mahang.Enabled = true;
 
+            if (textBox_mahang.Text == "" || textBox_tenhang.Text == "" || comboBox_chatlieu.SelectedItem == null || textBox_soluong.Text == "" || textBox_dongianhap.Text == "" || textBox_dongiaban.Text == "")
+            {
+                MessageBox.Show("Nhập thiếu thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!int.TryParse(textBox_soluong.Text, out int soluong))
+            {
+                MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (soluong < 0)
+                {
+                    MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            if (!float.TryParse(textBox_dongianhap.Text, out float dongianhap))
+            {
+                MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (dongianhap < 0)
+                {
+                    MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            if (!float.TryParse(textBox_dongiaban.Text, out float dongiaban))
+            {
+                MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (dongiaban < 0)
+                {
+                    MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (dongiaban < dongianhap)
+                {
+                    MessageBox.Show("Đơn giá bán phải lớn hơn đơn giá nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
+            if (dtmatrung.Rows.Count > 0)
+            {
+                MessageBox.Show("Không được nhập trùng Mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            dtProcessor.UpdateData($"insert into tblHang values ('{textBox_mahang.Text}'," +
+                $"'{textBox_tenhang.Text}'," +
+                $"'{comboBox_chatlieu.SelectedItem.ToString()}'," +
+                $"{textBox_soluong.Text}," +
+                $"{textBox_dongianhap.Text}," +
+                $"{textBox_dongiaban.Text})");
+
+            FilldgvHangHoa();
+
             ResetForm();
-        }
-
-        private void button_luu_Click(object sender, EventArgs e)
-        {
-            if (button_themmoi.Enabled)
-            {
-                if (textBox_mahang.Text == "" || textBox_tenhang.Text == "" || comboBox_chatlieu.SelectedItem == null || textBox_soluong.Text == "" || textBox_dongianhap.Text == "" || textBox_dongiaban.Text == "")
-                {
-                    MessageBox.Show("Nhập thiếu thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                if (!int.TryParse(textBox_soluong.Text, out int soluong))
-                {
-                    MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (soluong < 0)
-                    {
-                        MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                if (!float.TryParse(textBox_dongianhap.Text, out float dongianhap))
-                {
-                    MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (dongianhap < 0)
-                    {
-                        MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                if (!float.TryParse(textBox_dongiaban.Text, out float dongiaban))
-                {
-                    MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (dongiaban < 0)
-                    {
-                        MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
-                if (dtmatrung.Rows.Count > 0)
-                {
-                    MessageBox.Show("Không được nhập trùng Mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                dtProcessor.UpdateData($"insert into tblHang values ('{textBox_mahang.Text}'," +
-                    $"'{textBox_tenhang.Text}'," +
-                    $"'{comboBox_chatlieu.SelectedItem.ToString()}'," +
-                    $"{textBox_soluong.Text}," +
-                    $"{textBox_dongianhap.Text}," +
-                    $"{textBox_dongiaban.Text})");
-
-                FilldgvHangHoa();
-            }
-            else if (button_sua.Enabled)
-            {
-                if (textBox_mahang.Text == "" || textBox_tenhang.Text == "" || comboBox_chatlieu.SelectedItem == null || textBox_soluong.Text == "" || textBox_dongianhap.Text == "" || textBox_dongiaban.Text == "")
-                {
-                    MessageBox.Show("Nhập thiếu thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                if (!int.TryParse(textBox_soluong.Text, out int soluong))
-                {
-                    MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (soluong < 0)
-                    {
-                        MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                if (!float.TryParse(textBox_dongianhap.Text, out float dongianhap))
-                {
-                    MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (dongianhap < 0)
-                    {
-                        MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                if (!float.TryParse(textBox_dongiaban.Text, out float dongiaban))
-                {
-                    MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    if (dongiaban < 0)
-                    {
-                        MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                //DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
-                //if (dtmatrung.Rows.Count > 0)
-                //{
-                //    if (textBox_mahang.Text != maHangGlobal)
-                //    {
-                //        MessageBox.Show("Không được nhập trùng Mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //        return;
-                //    }
-                //}
-
-                textBox_mahang.Enabled = false;
-
-                dtProcessor.UpdateData($"update tblHang set " +
-                    $"TenHang = '{textBox_tenhang.Text}'," +
-                    $"ChatLieu = '{comboBox_chatlieu.SelectedItem.ToString()}'," +
-                    $"SoLuong = {textBox_soluong.Text}," +
-                    $"DonGiaNhap = {textBox_dongianhap.Text}," +
-                    $"DonGiaBan = {textBox_dongiaban.Text}" +
-                    $"where MaHang = '{textBox_mahang.Text}'");
-
-                FilldgvHangHoa();
-
-                textBox_mahang.Enabled = true;
-            }
         }
 
         private void dataGridView_hanghoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button_themmoi.Enabled = false;
-            button_sua.Enabled = true;
-            button_xoa.Enabled = true;
-            button_luu.Enabled = false;
-            button_boqua.Enabled = true;
+            //button_themmoi.Enabled = false;
+            //button_sua.Enabled = true;
+            //button_xoa.Enabled = true;
+            //button_luu.Enabled = false;
+            //button_boqua.Enabled = true;
 
             ResetForm();
 
@@ -268,20 +183,113 @@ namespace LTTQ_TH4_B2
 
         private void button_sua_Click(object sender, EventArgs e)
         {
-            button_themmoi.Enabled = false;
-            button_sua.Enabled = true;
-            button_xoa.Enabled = false;
-            button_luu.Enabled = true;
-            button_boqua.Enabled = true;
+            //button_themmoi.Enabled = false;
+            //button_sua.Enabled = true;
+            //button_xoa.Enabled = false;
+            //button_luu.Enabled = true;
+            //button_boqua.Enabled = true;
+
+            if (textBox_mahang.Text == "" || textBox_tenhang.Text == "" || comboBox_chatlieu.SelectedItem == null || textBox_soluong.Text == "" || textBox_dongianhap.Text == "" || textBox_dongiaban.Text == "")
+            {
+                MessageBox.Show("Nhập thiếu thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!int.TryParse(textBox_soluong.Text, out int soluong))
+            {
+                MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (soluong < 0)
+                {
+                    MessageBox.Show("Số lượng phải là số nguyên lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            if (!float.TryParse(textBox_dongianhap.Text, out float dongianhap))
+            {
+                MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (dongianhap < 0)
+                {
+                    MessageBox.Show("Đơn giá nhập phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            if (!float.TryParse(textBox_dongiaban.Text, out float dongiaban))
+            {
+                MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (dongiaban < 0)
+                {
+                    MessageBox.Show("Đơn giá bán phải là số lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+
+                if (dongiaban < dongianhap)
+                {
+                    MessageBox.Show("Đơn giá bán phải lớn hơn đơn giá nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            //DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
+            //if (dtmatrung.Rows.Count > 0)
+            //{
+            //    if (textBox_mahang.Text != maHangGlobal)
+            //    {
+            //        MessageBox.Show("Không được nhập trùng Mã hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return;
+            //    }
+            //}
+
+            DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
+            if (dtmatrung.Rows.Count == 0)
+            {
+                MessageBox.Show("Mã hàng không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            textBox_mahang.Enabled = false;
+
+            dtProcessor.UpdateData($"update tblHang set " +
+                $"TenHang = '{textBox_tenhang.Text}'," +
+                $"ChatLieu = '{comboBox_chatlieu.SelectedItem.ToString()}'," +
+                $"SoLuong = {textBox_soluong.Text}," +
+                $"DonGiaNhap = {textBox_dongianhap.Text}," +
+                $"DonGiaBan = {textBox_dongiaban.Text}" +
+                $"where MaHang = '{textBox_mahang.Text}'");
+
+            FilldgvHangHoa();
+
+            textBox_mahang.Enabled = true;
         }
 
         private void button_xoa_Click(object sender, EventArgs e)
         {
-            button_themmoi.Enabled = false;
-            button_sua.Enabled = false;
-            button_xoa.Enabled = true;
-            button_luu.Enabled = true;
-            button_boqua.Enabled = true;
+            //button_themmoi.Enabled = false;
+            //button_sua.Enabled = false;
+            //button_xoa.Enabled = true;
+            //button_luu.Enabled = true;
+            //button_boqua.Enabled = true;
+
+            DataTable dtmatrung = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{textBox_mahang.Text}'");
+            if (dtmatrung.Rows.Count == 0)
+            {
+                MessageBox.Show("Mã hàng không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (MessageBox.Show($"Bạn có muốn xóa {textBox_mahang} ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
