@@ -10,7 +10,7 @@ namespace LTTQ_TH4_B2.Classes
 {
     internal class DataProcessor
     {
-        string strConnect = "Server=DESKTOP-4G4NL83\\SQLEXPRESS;" +
+        string strConnect = "Server=THENAME\\SQLEXPRESS;" +
                 "DataBase=QLBanHang_TH4_2;Integrated Security=true;Trusted_Connection=True;TrustServerCertificate=True;";
         SqlConnection sqlConnect = null;
 

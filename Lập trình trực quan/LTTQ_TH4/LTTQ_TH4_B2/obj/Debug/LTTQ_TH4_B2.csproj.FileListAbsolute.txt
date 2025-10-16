@@ -20,3 +20,14 @@ E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj
 E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.csproj.CoreCompileInputs.cache
 E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_C6_BT6.5.exe
 E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_C6_BT6.5.pdb
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.FormMain.resources
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.FormHangHoa.resources
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\bin\Debug\LTTQ_TH4_B2.exe.config
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\bin\Debug\LTTQ_TH4_B2.exe
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\bin\Debug\LTTQ_TH4_B2.pdb
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.Properties.Resources.resources
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.exe
+C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_TH4\LTTQ_TH4_B2\obj\Debug\LTTQ_TH4_B2.pdb

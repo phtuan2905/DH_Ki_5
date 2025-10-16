@@ -303,5 +303,10 @@ namespace LTTQ_TH4_B2
         {
             this.Close();
         }
+
+        private void label_xinchao_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
