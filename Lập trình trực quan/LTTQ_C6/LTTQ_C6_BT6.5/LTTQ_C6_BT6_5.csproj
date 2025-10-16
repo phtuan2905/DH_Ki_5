@@ -48,11 +48,18 @@
   <ItemGroup>
     <Compile Include="Classes\DataProcessor.cs" />
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Classes\GlobalData.cs" />
     <Compile Include="DanhMuc\FormChatLieu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\FormChatLieu.Designer.cs">
       <DependentUpon>FormChatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMuc\FormDangNhapNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormDangNhapNhanVien.Designer.cs">
+      <DependentUpon>FormDangNhapNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\FormHoaDon.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DanhMuc\FormChatLieu.resx">
       <DependentUpon>FormChatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FormDangNhapNhanVien.resx">
+      <DependentUpon>FormDangNhapNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>

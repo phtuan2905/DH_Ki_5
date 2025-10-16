@@ -44,7 +44,7 @@ CREATE TABLE tblKhach (
 
 -- Bảng Hóa Đơn Bán
 CREATE TABLE tblHDBan (
-    MaHDBan NVARCHAR(10) PRIMARY KEY,
+    MaHDBan NVARCHAR(50) PRIMARY KEY,
     MaNhanVien NVARCHAR(10) NOT NULL,
     NgayBan DATE,
     MaKhach NVARCHAR(10),
@@ -55,12 +55,19 @@ CREATE TABLE tblHDBan (
 
 -- Bảng Chi Tiết Hóa Đơn Bán
 CREATE TABLE tblChiTietHDBan (
-    MaHDBan NVARCHAR(10) NOT NULL,
+    MaHDBan NVARCHAR(50) NOT NULL,
     MaHang NVARCHAR(10) NOT NULL,
     SoLuong INT NOT NULL,
     DonGia DECIMAL(18,2),
-    ThanhTien AS (SoLuong * DonGia) PERSISTED,
+    ThanhTien FLOAT,
     PRIMARY KEY (MaHDBan, MaHang),
     FOREIGN KEY (MaHDBan) REFERENCES tblHDBan(MaHDBan),
     FOREIGN KEY (MaHang) REFERENCES tblHang(MaHang)
 );
+
+ALTER TABLE tblNhanvien
+ADD Passw NVARCHAR(50);
+
+UPDATE tblNhanvien set Passw = '123' where MaNhanVien = 'NV01';
+
+drop table tblChiTietHDBan
