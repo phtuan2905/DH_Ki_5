@@ -23,3 +23,7 @@ C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\ob
 C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormChatLieu.resources
 C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormKhachHang.resources
 C:\Users\Admin\Desktop\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormNhanVien.resources
+E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormChatLieu.resources
+E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormHoaDon.resources
+E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormKhachHang.resources
+E:\OneDrive\Desktop\DH\DH_Ki_5\Lập trình trực quan\LTTQ_C6\LTTQ_C6_BT6.5\obj\Debug\LTTQ_C6_BT6._5.DanhMuc.FormNhanVien.resources

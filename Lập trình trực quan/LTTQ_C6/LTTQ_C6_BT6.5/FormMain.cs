@@ -41,5 +41,11 @@ namespace LTTQ_C6_BT6._5
             FormNhanVien form = new FormNhanVien();
             form.Show();
         }
+
+        private void hoáĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDon form = new FormHoaDon();
+            form.Show();
+        }
     }
 }

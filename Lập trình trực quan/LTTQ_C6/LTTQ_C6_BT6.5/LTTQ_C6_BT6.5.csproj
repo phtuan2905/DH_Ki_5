@@ -54,6 +54,12 @@
     <Compile Include="DanhMuc\FormChatLieu.Designer.cs">
       <DependentUpon>FormChatLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\FormHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FormHoaDon.Designer.cs">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DanhMuc\FormChatLieu.resx">
       <DependentUpon>FormChatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
