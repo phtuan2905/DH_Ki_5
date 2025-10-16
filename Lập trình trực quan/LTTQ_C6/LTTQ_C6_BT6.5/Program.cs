@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTTQ_C6_BT6._5
+namespace LTTQ_C6_BT6_5
 {
     internal static class Program
     {

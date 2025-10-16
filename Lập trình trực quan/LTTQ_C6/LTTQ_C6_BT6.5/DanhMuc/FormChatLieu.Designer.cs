@@ -1,4 +1,4 @@
-﻿namespace LTTQ_C6_BT6._5.DanhMuc
+﻿namespace LTTQ_C6_BT6_5.DanhMuc
 {
     partial class FormChatLieu
     {

@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LTTQ_C6_BT6._5.Classes;
+using LTTQ_C6_BT6_5.Classes;
 
-namespace LTTQ_C6_BT6._5.DanhMuc
+namespace LTTQ_C6_BT6_5.DanhMuc
 {
     public partial class FormChatLieu : Form
     {

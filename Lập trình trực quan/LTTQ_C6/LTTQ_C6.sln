@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTTQ_C6_BT6.5", "LTTQ_C6_BT6.5\LTTQ_C6_BT6.5.csproj", "{268E96F5-4085-49BE-A52B-9824EACEF98C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTTQ_C6_BT6_5", "LTTQ_C6_BT6.5\LTTQ_C6_BT6_5.csproj", "{268E96F5-4085-49BE-A52B-9824EACEF98C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

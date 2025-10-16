@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{268E96F5-4085-49BE-A52B-9824EACEF98C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LTTQ_C6_BT6._5</RootNamespace>
-    <AssemblyName>LTTQ_C6_BT6.5</AssemblyName>
+    <RootNamespace>LTTQ_C6_BT6_5</RootNamespace>
+    <AssemblyName>LTTQ_C6_BT6_5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -112,6 +112,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

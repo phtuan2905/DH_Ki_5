@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTTQ_C6_BT6._5.Classes
+namespace LTTQ_C6_BT6_5.Classes
 {
     internal class Functions
     {

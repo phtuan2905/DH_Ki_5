@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LTTQ_C6_BT6._5.Classes;
-using LTTQ_C6_BT6._5.DanhMuc;
+using LTTQ_C6_BT6_5.Classes;
+using LTTQ_C6_BT6_5.DanhMuc;
 
-namespace LTTQ_C6_BT6._5
+namespace LTTQ_C6_BT6_5
 {
     public partial class FormHangHoa : Form
     {

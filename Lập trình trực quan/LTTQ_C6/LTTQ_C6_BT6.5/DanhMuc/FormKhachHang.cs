@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTTQ_C6_BT6._5.DanhMuc
+namespace LTTQ_C6_BT6_5.DanhMuc
 {
     public partial class FormKhachHang : Form
     {

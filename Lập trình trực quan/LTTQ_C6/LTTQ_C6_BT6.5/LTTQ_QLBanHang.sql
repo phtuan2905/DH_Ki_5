@@ -1,4 +1,4 @@
-﻿CREATE DATABASE LTTQ_QLBanHang;
+﻿    CREATE DATABASE LTTQ_QLBanHang;
 GO
 USE LTTQ_QLBanHang;
 GO
@@ -19,7 +19,7 @@ CREATE TABLE tblHang (
     SoLuong INT DEFAULT 0,
     DonGiaNhap DECIMAL(18,2),
     DonGiaBan DECIMAL(18,2),
-    Anh NVARCHAR(255),
+    Anh NVARCHAR(255),  
     GhiChu NVARCHAR(255),
     FOREIGN KEY (MaChatLieu) REFERENCES tblChatlieu(MaChatLieu)
 );

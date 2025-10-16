@@ -1,4 +1,4 @@
-﻿namespace LTTQ_C6_BT6._5
+﻿namespace LTTQ_C6_BT6_5
 {
     partial class FormMain
     {
