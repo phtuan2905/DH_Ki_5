@@ -59,11 +59,14 @@ CREATE TABLE tblChiTietHDBan (
     MaHang NVARCHAR(10) NOT NULL,
     SoLuong INT NOT NULL,
     DonGia DECIMAL(18,2),
+	GiamGia INT,
     ThanhTien FLOAT,
     PRIMARY KEY (MaHDBan, MaHang),
     FOREIGN KEY (MaHDBan) REFERENCES tblHDBan(MaHDBan),
     FOREIGN KEY (MaHang) REFERENCES tblHang(MaHang)
 );
+
+drop table tblChiTietHDBan
 
 ALTER TABLE tblNhanvien
 ADD Passw NVARCHAR(50);

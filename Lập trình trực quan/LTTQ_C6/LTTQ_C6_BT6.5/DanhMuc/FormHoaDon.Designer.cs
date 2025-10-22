@@ -53,7 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button_themhoadon = new System.Windows.Forms.Button();
-            this.button_lua = new System.Windows.Forms.Button();
+            this.button_luu = new System.Windows.Forms.Button();
             this.button_huyhoadon = new System.Windows.Forms.Button();
             this.button_inhoadon = new System.Windows.Forms.Button();
             this.button_dong = new System.Windows.Forms.Button();
@@ -262,6 +262,7 @@
             this.comboBox_manhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_manhanvien.BackColor = System.Drawing.SystemColors.Info;
+            this.comboBox_manhanvien.Enabled = false;
             this.comboBox_manhanvien.FormattingEnabled = true;
             this.comboBox_manhanvien.Location = new System.Drawing.Point(127, 71);
             this.comboBox_manhanvien.Margin = new System.Windows.Forms.Padding(4);
@@ -379,7 +380,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.button_themhoadon);
-            this.panel4.Controls.Add(this.button_lua);
+            this.panel4.Controls.Add(this.button_luu);
             this.panel4.Controls.Add(this.button_huyhoadon);
             this.panel4.Controls.Add(this.button_inhoadon);
             this.panel4.Controls.Add(this.button_dong);
@@ -407,18 +408,18 @@
             this.button_themhoadon.UseVisualStyleBackColor = true;
             this.button_themhoadon.Click += new System.EventHandler(this.button_themhoadon_Click);
             // 
-            // button_lua
+            // button_luu
             // 
-            this.button_lua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.button_luu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_lua.Location = new System.Drawing.Point(469, 69);
-            this.button_lua.Margin = new System.Windows.Forms.Padding(4);
-            this.button_lua.Name = "button_lua";
-            this.button_lua.Size = new System.Drawing.Size(100, 28);
-            this.button_lua.TabIndex = 40;
-            this.button_lua.Text = "Lưu";
-            this.button_lua.UseVisualStyleBackColor = true;
-            this.button_lua.Click += new System.EventHandler(this.button_lua_Click);
+            this.button_luu.Location = new System.Drawing.Point(469, 69);
+            this.button_luu.Margin = new System.Windows.Forms.Padding(4);
+            this.button_luu.Name = "button_luu";
+            this.button_luu.Size = new System.Drawing.Size(100, 28);
+            this.button_luu.TabIndex = 40;
+            this.button_luu.Text = "Lưu";
+            this.button_luu.UseVisualStyleBackColor = true;
+            this.button_luu.Click += new System.EventHandler(this.button_luu_Click);
             // 
             // button_huyhoadon
             // 
@@ -431,6 +432,7 @@
             this.button_huyhoadon.TabIndex = 39;
             this.button_huyhoadon.Text = "Hủy hóa đơn";
             this.button_huyhoadon.UseVisualStyleBackColor = true;
+            this.button_huyhoadon.Click += new System.EventHandler(this.button_huyhoadon_Click);
             // 
             // button_inhoadon
             // 
@@ -588,6 +590,7 @@
             this.dataGridView_hoadon.RowHeadersWidth = 51;
             this.dataGridView_hoadon.Size = new System.Drawing.Size(967, 162);
             this.dataGridView_hoadon.TabIndex = 17;
+            this.dataGridView_hoadon.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_hoadon_CellDoubleClick);
             // 
             // label15
             // 
@@ -760,7 +763,7 @@
         private System.Windows.Forms.Button button_timkiem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button_themhoadon;
-        private System.Windows.Forms.Button button_lua;
+        private System.Windows.Forms.Button button_luu;
         private System.Windows.Forms.Button button_huyhoadon;
         private System.Windows.Forms.Button button_inhoadon;
         private System.Windows.Forms.Button button_dong;

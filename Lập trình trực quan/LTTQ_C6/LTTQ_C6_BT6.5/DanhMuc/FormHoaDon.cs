@@ -14,6 +14,8 @@ namespace LTTQ_C6_BT6_5.DanhMuc
     public partial class FormHoaDon : Form
     {
         Classes.DataProcessor dtProcessor = new Classes.DataProcessor();
+        private DataTable dtHang;
+
         public FormHoaDon()
         {
             InitializeComponent();
@@ -21,8 +23,9 @@ namespace LTTQ_C6_BT6_5.DanhMuc
 
         private void FillDgv()
         {
-            DataTable dtHD = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{comboBox_mahang.Text}'");
+            DataTable dtHD = dtProcessor.GetDataTable($"select * from tblChiTietHDBan where MaHDBan = '{textBox_mahoadon.Text}'");
             dataGridView_hoadon.DataSource = dtHD;
+            TinhTongTien(dtHD);
         }
 
         private void ClearForm()
@@ -89,7 +92,7 @@ namespace LTTQ_C6_BT6_5.DanhMuc
             {
                 return;
             }
-            DataTable dtHang = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{comboBox_mahang.Text}'");
+            dtHang = dtProcessor.GetDataTable($"select * from tblHang where MaHang = '{comboBox_mahang.Text}'");
             if (dtHang.Rows.Count > 0)
             {
                 textBox_tenhang.Text = dtHang.Rows[0]["TenHang"].ToString();
@@ -120,7 +123,8 @@ namespace LTTQ_C6_BT6_5.DanhMuc
         {
             ClearForm();
             Guid randomUUID = Guid.NewGuid();
-            textBox_mahoadon.Text = "HD" + randomUUID.ToString();
+            Random random = new Random();
+            textBox_mahoadon.Text = "HDB_" + DateTime.Today.Day.ToString() + DateTime.Today.Month.ToString() + DateTime.Today.Year.ToString() + "0" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
             dateTimePicker_ngayban.Value = DateTime.Today;
             dataGridView_hoadon.DataSource = null;
         }
@@ -243,6 +247,7 @@ namespace LTTQ_C6_BT6_5.DanhMuc
 
         private bool ThanhTien()
         {
+
             if (int.TryParse(textBox_soluong.Text, out int soluong))
             {
                 if (soluong < 0)
@@ -254,6 +259,13 @@ namespace LTTQ_C6_BT6_5.DanhMuc
             else
             {
                 MessageBox.Show("Số lượng phải là số nguyên dương", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+
+            if (int.Parse(dtHang.Rows[0]["SoLuong"].ToString()) < soluong)
+            {
+                MessageBox.Show($"Số lượng trong kho của món hàng chỉ còn {dtHang.Rows[0]["SoLuong"].ToString()}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
@@ -284,8 +296,9 @@ namespace LTTQ_C6_BT6_5.DanhMuc
             return true;
         }
 
-        private void button_lua_Click(object sender, EventArgs e)
+        private void button_luu_Click(object sender, EventArgs e)
         {
+
             DataTable dtHoaDon = dtProcessor.GetDataTable($"select * from tblHDBan where MaHDBan = '{textBox_mahoadon.Text}'");
             if (dtHoaDon.Rows.Count == 0 )
             {
@@ -303,12 +316,75 @@ namespace LTTQ_C6_BT6_5.DanhMuc
             {
                 return;
             }
+
+            DataTable dtHang = dtProcessor.GetDataTable($"select * from tblChiTietHDBan where MaHang = '{comboBox_mahang.Text}'");
+            if (dtHang.Rows.Count > 0)
+            {
+                DeleteHangFromCTHD(comboBox_mahang.Text, comboBox_mahoadon.Text);
+            }
+
             dtProcessor.UpdateData($"insert into tblChiTietHDBan values" +
                 $"('{textBox_mahoadon.Text}'," +
                 $"'{comboBox_mahang.Text}'," +
                 $"{textBox_soluong.Text.ToString()}," +
                 $"{textBox_dongia.Text.ToString()}," +
+                $"{(textBox_giamgia.Text == string.Empty ? "0" : textBox_giamgia.Text)}," +
                 $"{textBox_thanhtien.Text})");
+
+            dtProcessor.UpdateData($"update tblHang set SoLuong = SoLuong - {textBox_soluong.Text} where MaHang = '{comboBox_mahang.Text}'");
+
+            FillDgv();
+        }
+   
+        private void TinhTongTien(DataTable dt)
+        {
+            double tongtien = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                tongtien += double.Parse(dr["ThanhTien"].ToString());
+            }
+
+            textBox_tongtien.Text = tongtien.ToString();
+        }
+
+        private void dataGridView_hoadon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView_hoadon.CurrentRow;
+
+            DeleteHangFromCTHD(row.Cells["MaHang"].Value.ToString(), row.Cells["MaHDBan"].Value.ToString());
+
+            FillDgv();
+        }
+
+        private void DeleteHangFromCTHD(string mahang, string mahdban)
+        {
+            dtProcessor.UpdateData($"delete from tblChiTietHDBan where MaHang = '{mahang}' and MaHDBan = '{mahdban}'");
+        }
+
+        private void button_huyhoadon_Click(object sender, EventArgs e)
+        {
+            if (comboBox_mahoadon.Text == string.Empty)
+            {
+                MessageBox.Show("Chưa nhập mã hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataTable dtHoadon = dtProcessor.GetDataTable($"select * from tblHDBan where MaHDBan = '{comboBox_mahoadon.Text}'");
+
+            if (dtHoadon.Rows.Count == 0)
+            {
+                MessageBox.Show("Hóa đơn không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach(DataGridViewRow row in dataGridView_hoadon.Rows )
+            {
+                DeleteHangFromCTHD(row.Cells["MaHang"].Value.ToString(), row.Cells["MaHDBan"].Value.ToString());
+            }
+
+            dtProcessor.UpdateData($"delete from tblHDBan where MaHDBan = '{comboBox_mahoadon.Text}'");
+
+            ClearForm();
 
             FillDgv();
         }
