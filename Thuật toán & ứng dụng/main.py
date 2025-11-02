@@ -64,16 +64,66 @@
 # for i, x in enumerate(a, 1):
 
 #Day con lien tuc co tong cho truoc
-n, t = map(int, input().split())
-D = {0 : 0}
-res = 0
-s = 0
-a = list(map(int, input().split))
-for i in range (1, n):
-    s = s + a.pop(i)
-    if (s - t) in D.keys():
-        res = max(res, i - D[s-t])
-    if s not in D.keys():
-        D[s] = i
+# n, t = map(int, input().split())
+# D = {0 : 0}
+# res = 0
+# s = 0
+# a = list(map(int, input().split))
+# for i in range (1, n):
+#     s = s + a.pop(i)
+#     if (s - t) in D.keys():
+#         res = max(res, i - D[s-t])
+#     if s not in D.keys():
+#         D[s] = i
     
-print(res)
+# print(res)
+
+# Dictionary
+# n = int(input())
+# a = list(map(int, input().split()))
+# dict = {}
+
+# temp = res = 0
+
+# for i in range(n):
+#     if a[i] in dict and dict[a[i]] >= temp:
+#         temp = dict[a[i]] + 1
+#     dict[a[i]] = i
+#     res = max(res, i - temp + 1)
+
+# print(res)
+
+#Buoi 1
+# The tich khoi cau
+# r = float(input())
+# pi = 3.14159
+# V = (float)(4/3)*pi*r**3
+# print("VOLUME = %0.3f" %V)
+
+# Buoi 2
+# Giai thua so lon
+# n = int(input())
+# s = 1
+# for i in range(1, n + 1):
+#     s *= i
+# print(s)
+
+# Buoi 3
+# Uong chai bia
+def sol():
+    n, m, k = list(map(int, input().split()))
+
+    res = n // m
+    nap = res
+    while (nap >= k):
+        res += nap // k
+        nap = nap // k + nap % k
+
+    return res
+
+if __name__ == '__main__':
+    n = int(input())
+    l = []
+    for i in range(n): l.append(sol())
+
+    for i in range(n): print(l[i])
