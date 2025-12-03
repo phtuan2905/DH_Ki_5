@@ -1,0 +1,67 @@
+* Chuỗi lệnh đặt tên, mật khẩu cho switch, router
+- Chế độ config
+hostname <Tên thiết bị>
+enable secret <Mật khẩu>
+- Chế độ user
+wr mem
+
+* Lệnh VLAN trên Switch
+- Chế độ config
+vlan <Số thứ tự của vlan>
+- Chế độ config VLAN
+name <Tên vlan>
+no vlan <Số thứ tự vlan>
+
+* Lệnh Interface trên Switch
+- Chế độ config
+interface <Tên interface>
+- Chế độ config interface
+no shutdown
+
++ Cổng chế độ access
+switchport mode access
+switchport acc vlan <Số thứ tự vlan>
+no switchport acc vlan
++ Cổng chế độ trunk
+switch mode trunk 
+switch trunk allowed vlan <Số thứ tự vlan>,<Số thứ tự vlan>,...
+
+* Lệnh trên Router
+- Chế độ config
+ipv6 unicast-routing (Kích hoạt chức năng định tuyến ipv6)
+ipv6 cef (kích hoạt ipv6 trên router)
+
+* Lệnh interface trên Router
+- Chế độ config 
+interface <Tên interface>
+ip route <ipv4 đích (muốn kết nối đến)> <prefix mask đích> <ipv4 next-hop (ip cổng trung gian mà router hiện tại đang kết nối tới)>
+ipv6 route <ipv6 đích (muốn kết nối đến)>/<prefix mask đích> <ipv6 next-hop (ipv6 cổng trung gian mà router hiện tại đang kết nối tới)>
+- Chế độ config interface
+ip address <ipv4> <prefix mask>
+ipv6 address <ipv6>/<prefix_length>
+
+* Lệnh cấu hình DHCPv4 trên Router
+- Chế độ config
+ip dhcp excluded-address <ipv4 bắt đầu> <ipv4 kết thúc> (lệnh loại trừ danh sách ipv4)
+ip dhcp pool <Tên DHCP pool>
+- Chế độ config DHCP
+network <địa chỉ mạng ipv4> <subnet mask> (Chọn ip mạng áp dụng dhcp)
+default-router <địa chỉ làm gateway thường là địa chỉ router hiện tại>
+dns-server <địa chỉ dns server>
+
+* Lệnh cấu hình DHCPv6 trên Router
+R-UTC(config)#ipv6 dhcp pool <Tên pool>
+R-UTC(config-dhcpv6)# dns-server <ipv6 của dns server>
+R-UTC(config-dhcpv6)#exit
+R-UTC(config)#interface <Tên interface>
+R-UTC(config-if)# ipv6 nd other-config-flag
+R-UTC(config-if)# ipv6 dhcp server <Tên pool>
+
+* Lệnh DHCP Router Relay
+- Chế độ config trên router relay
+interface <tên interface cần dhcp>
+- Chế độ config interface
+ip helper-address <ipv4 prefix của dhcp server>
+ipv6 helper-address <ipv6 prefix của dhcp server>
+
+
