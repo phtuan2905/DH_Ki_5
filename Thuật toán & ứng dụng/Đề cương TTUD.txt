@@ -1,17 +1,21 @@
 * Đề cương TTUD học kì 2 năm 2025-2026
 - Ngăn xếp:
-+ Khối lượng
-+ Chào đón K59
-+ Xếp hàng
+	+ Khối lượng
+	+ Chào đón K59
+	+ Xếp hàng
 - Hàng đợi:
-+ Dãy con liên tục có tổng cho trước
+	+ Dãy con liên tục có tổng cho trước
 - Hàng đợi ưu tiên:
-+ Làm bóng tuyết
-+ Lắp ghép ống nước
-+ Thuật toán Huffman
+	+ Làm bóng tuyết
+	+ Lắp ghép ống nước
+	+ Thuật toán Huffman
 - Hàng đợi 2 đầu:
-+ Trinh thám
+	+ Trinh thám
 - Dictionary
-+ Dãy con liên tục khác biệt
+	+ Dãy con liên tục khác biệt
 
 * Đề thi có 3 bài trong đó 2 bài trong đề cương và 1 bài ko trong đề cương
+- Một bài gồm:
+	+ Từng bước giải
+	+ Code python
+	+ Ví dụ
