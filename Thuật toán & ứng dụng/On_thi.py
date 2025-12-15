@@ -182,10 +182,10 @@ res = 0
 
 for i in range(n):
     if a[i] in d and d[a[i]] >= l:
-        l = d[a[i]]    
+        l = d[a[i]] + 1    
     d[a[i]] = i
     
-    res = max(res, i - l)
+    res = max(res, i - l + 1)
 
 print(res)
 
